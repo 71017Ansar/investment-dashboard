@@ -1,26 +1,150 @@
+/* ✅ Google Fonts import MUST be first */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ✅ Tailwind CSS 4 import */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Custom Colors */
+  --color-background: #0a1628;
+  --color-surface: #1a2a4a;
+  --color-surface-container: #1a2a4a;
+  --color-surface-container-high: #22355b;
+  --color-surface-container-highest: #2a3f6c;
+  --color-primary: #00d4aa;
+  --color-secondary: #00d4aa;
+  --color-error: #ff6b6b;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #8899bb;
+  --color-outline-variant: #2a3f6c;
+  --color-primary-container: #00d4aa;
+  --color-on-primary-container: #0a1628;
+
+  /* Typography */
+  --font-data-sm: 'JetBrains Mono', monospace;
+  --font-label-caps: 'Inter', sans-serif;
+  --font-body-md: 'Inter', sans-serif;
+  --font-headline-md: 'Hanken Grotesk', sans-serif;
+  --font-display-lg: 'Hanken Grotesk', sans-serif;
+  --font-data-lg: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --spacing-gutter: 24px;
+  --spacing-xl: 64px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-base: 4px;
+  --spacing-xs: 8px;
+  --spacing-lg: 40px;
+  --spacing-container-max: 1440px;
+
+  /* Border Radius */
+  --radius-xl: 0.75rem;
+  --radius-full: 0.75rem;
+  --radius-default: 0.125rem;
+  --radius-lg: 0.25rem;
+
+  /* Font Sizes */
+  --text-data-sm: 14px;
+  --text-data-sm--line-height: 20px;
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 16px;
+  --text-label-caps--letter-spacing: 0.05em;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-data-lg: 20px;
+  --text-data-lg--line-height: 28px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base styles */
+@layer base {
+  * {
+    border-color: var(--color-outline-variant);
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface-variant);
+    font-family: var(--font-body-md);
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom component classes */
+@layer components {
+  .glass-panel {
+    background: rgba(26, 42, 74, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(42, 63, 108, 0.3);
+    border-radius: var(--radius-xl);
+  }
+  
+  .aum-card-gradient {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0088cc 100%);
+  }
+}
+@layer components {
+  .glass-panel {
+    background: rgba(26, 42, 74, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+  }
+  
+  .buy-gradient {
+    background: linear-gradient(135deg, #00d4aa 0%, #008f72 100%);
+  }
+  
+  .sell-gradient {
+    background: linear-gradient(135deg, #ff6b6b 0%, #d44c4c 100%);
+  }
+  
+  .depth-bar-bid {
+    background: rgba(0, 212, 170, 0.15);
+    border-right: 2px solid #00d4aa;
+  }
+  
+  .depth-bar-ask {
+    background: rgba(255, 107, 107, 0.15);
+    border-right: 2px solid #ff6b6b;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar for terminal feel */
+  ::-webkit-scrollbar { 
+    width: 4px; 
+    height: 4px; 
+  }
+  ::-webkit-scrollbar-track { 
+    background: #0a1628; 
+  }
+  ::-webkit-scrollbar-thumb { 
+    background: #353536; 
+    border-radius: 10px; 
+  }
+  ::-webkit-scrollbar-thumb:hover { 
+    background: #45474c; 
+  }
+}
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #45474c;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #5a5a5a;
+  }
 }
