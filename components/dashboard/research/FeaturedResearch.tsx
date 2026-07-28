@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmark, User } from "lucide-react";
+import { Bookmark } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface FeaturedResearch {

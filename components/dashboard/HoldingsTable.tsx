@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUp, ArrowDown } from "lucide-react";
 
 interface Holding {
   ticker: string;
@@ -49,16 +48,16 @@ export function HoldingsTable({ data }: HoldingsTableProps) {
   };
 
   return (
-    <div className="glass-panel p-6 rounded-xl space-y-4 lg:col-span-2">
-      <div className="flex justify-between items-center">
-        <h3 className="text-2xl font-bold text-white">Top 5 Holdings</h3>
+    <div className="glass-panel space-y-4 rounded-xl p-4 sm:p-6 lg:col-span-2">
+      <div className="flex flex-wrap justify-between items-center gap-2">
+        <h3 className="text-xl font-bold text-white sm:text-2xl">Top 5 Holdings</h3>
         <Button variant="link" className="text-primary">
           View All Assets →
         </Button>
       </div>
 
       <div className="overflow-x-auto">
-        <Table>
+        <Table className="min-w-[720px]">
           <TableHeader>
             <TableRow className="border-outline-variant/30 hover:bg-transparent">
               <TableHead className="text-xs font-medium text-on-surface-variant uppercase tracking-wider">

@@ -36,7 +36,7 @@ const scheduledReports: ScheduledReport[] = [
 
 export function ScheduledReports() {
   return (
-    <section className="glass-panel p-6 rounded-xl">
+    <section className="glass-panel rounded-xl p-4 sm:p-6">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-sm font-medium text-white uppercase tracking-wider font-bold">
           Scheduled Reports
@@ -50,7 +50,7 @@ export function ScheduledReports() {
         {scheduledReports.map((report) => (
           <div
             key={report.id}
-            className="flex flex-wrap items-center justify-between p-4 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-all border border-outline-variant/20"
+            className="flex flex-col items-start justify-between gap-4 rounded-lg border border-outline-variant/20 bg-surface-container-low p-4 transition-all hover:bg-surface-container-high sm:flex-row sm:items-center"
           >
             <div className="flex items-center gap-4">
               <div className="p-2 rounded-lg bg-surface-container">
@@ -58,7 +58,7 @@ export function ScheduledReports() {
               </div>
               <div>
                 <h4 className="font-medium text-white">{report.name}</h4>
-                <div className="flex items-center gap-3 text-sm text-on-surface-variant">
+                <div className="mt-1 flex flex-col gap-1 text-sm text-on-surface-variant xl:flex-row xl:items-center xl:gap-3">
                   <span className="flex items-center gap-1">
                     <Clock className="h-3 w-3" />
                     {report.schedule}

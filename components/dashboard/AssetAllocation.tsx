@@ -12,11 +12,20 @@ interface AssetAllocationProps {
   data: AllocationItem[];
 }
 
+interface PieLabelProps {
+  cx?: number;
+  cy?: number;
+  midAngle?: number;
+  innerRadius?: number;
+  outerRadius?: number;
+  value?: number;
+}
+
 export function AssetAllocation({ data }: AssetAllocationProps) {
   const total = data.reduce((sum, item) => sum + item.value, 0);
 
   // Custom label renderer with proper Recharts types
-  const renderCustomLabel = (props: any) => {
+  const renderCustomLabel = (props: PieLabelProps) => {
     const { cx, cy, midAngle, innerRadius, outerRadius, value } = props;
     
     // Handle potential undefined values
@@ -37,14 +46,14 @@ export function AssetAllocation({ data }: AssetAllocationProps) {
         dominantBaseline="central"
         className="text-[10px] font-bold font-mono"
       >
-        {value}%
+        {value ?? 0}%
       </text>
     );
   };
 
   return (
-    <div className="glass-panel p-6 rounded-xl space-y-4 lg:col-span-1">
-      <h3 className="text-2xl font-bold text-white">Asset Allocation</h3>
+    <div className="glass-panel space-y-4 rounded-xl p-4 sm:p-6 xl:col-span-1">
+      <h3 className="text-xl font-bold text-white sm:text-2xl">Asset Allocation</h3>
       
       <div className="flex flex-col items-center py-4">
         <div className="relative w-56 h-56">
@@ -74,7 +83,7 @@ export function AssetAllocation({ data }: AssetAllocationProps) {
                   borderRadius: "8px",
                   color: "white",
                 }}
-                formatter={(value: any) => {
+                formatter={(value: unknown) => {
                   // Handle both string and number values
                   if (typeof value === 'number' || typeof value === 'string') {
                     return `${value}%`;

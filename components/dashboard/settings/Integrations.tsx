@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Cloud, Database, Bitcoin, Link2, Check, ExternalLink } from "lucide-react";
+import { Cloud, Database, Bitcoin, Check, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Integration {
@@ -87,7 +87,7 @@ export function Integrations() {
     <section 
       id="integrations" 
       data-section="integrations"
-      className="glass-panel p-6 rounded-xl space-y-6"
+      className="glass-panel space-y-6 rounded-xl p-4 sm:p-6"
     >
       <div>
         <h2 className="text-2xl font-bold text-white mb-1">Integrations</h2>
@@ -101,7 +101,7 @@ export function Integrations() {
           <div
             key={integration.id}
             className={cn(
-              "flex items-center justify-between p-4 rounded-lg border transition-all",
+              "flex flex-col items-start justify-between gap-4 rounded-lg border p-4 transition-all sm:flex-row sm:items-center",
               integration.status === "connected"
                 ? "bg-background border-primary/20"
                 : integration.status === "coming"
@@ -109,7 +109,7 @@ export function Integrations() {
                 : "bg-background border-white/5 hover:border-primary/30"
             )}
           >
-            <div className="flex items-center gap-4">
+            <div className="flex min-w-0 items-center gap-4">
               <div className={cn(
                 "w-12 h-12 rounded flex items-center justify-center",
                 integration.status === "connected"

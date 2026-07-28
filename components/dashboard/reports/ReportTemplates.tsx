@@ -1,6 +1,6 @@
 "use client";
 
-import { FileText, Shield, BarChart, FileCheck, ArrowRight } from "lucide-react";
+import { FileText, Shield, FileCheck, ArrowRight } from "lucide-react";
 
 interface Template {
   id: number;

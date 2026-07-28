@@ -5,18 +5,20 @@ import {
   ArrowUp, 
   ArrowDown, 
   TrendingUp, 
-  Wallet, 
-  BarChart, 
+  Wallet,
+  BarChart,
   PieChart,
-  LucideIcon 
+  type LucideIcon,
 } from "lucide-react";
+
+type KPIIcon = "wallet" | "trending-up" | "bar-chart" | "pie-chart";
 
 // Define proper types
 interface KPI {
   label: string;
   value: string;
   change: string;
-  icon: LucideIcon;  // ✅ Use LucideIcon type instead of string
+  icon: KPIIcon;
   trend: "up" | "down";
   isDominant?: boolean;
 }
@@ -26,12 +28,19 @@ interface KPIStatsProps {
 }
 
 export function KPIStats({ stats }: KPIStatsProps) {
+  const iconMap: Record<KPIIcon, LucideIcon> = {
+    wallet: Wallet,
+    "trending-up": TrendingUp,
+    "bar-chart": BarChart,
+    "pie-chart": PieChart,
+  };
+
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
       {stats.map((stat, index) => {
         const isPositive = stat.trend === "up";
         const isDominant = stat.isDominant;
-        const Icon = stat.icon;  // ✅ Now properly typed
+        const Icon = iconMap[stat.icon];
 
         if (isDominant) {
           return (

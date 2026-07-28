@@ -8,7 +8,7 @@ import { TopReports } from "./TopReports";
 
 export function ResearchTab() {
   return (
-    <div className="p-6 space-y-6 max-w-[1440px] mx-auto">
+    <div className="mx-auto max-w-[1440px] space-y-4 px-3 py-4 sm:space-y-6 sm:px-6 sm:py-6 lg:px-8">
       {/* Row 1: Research Search & Filters */}
       <ResearchSearch />
       
@@ -16,11 +16,11 @@ export function ResearchTab() {
       <FeaturedResearch />
       
       {/* Row 3: Market Intelligence */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-        <div className="lg:col-span-8">
+      <section className="grid grid-cols-1 xl:grid-cols-12 gap-4">
+        <div className="xl:col-span-8">
           <EconomicCalendar />
         </div>
-        <div className="lg:col-span-4">
+        <div className="xl:col-span-4">
           <AnalystRatings />
         </div>
       </section>

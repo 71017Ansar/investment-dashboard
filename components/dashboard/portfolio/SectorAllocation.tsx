@@ -27,9 +27,9 @@ export function SectorAllocation() {
   const [activeFilter, setActiveFilter] = useState("Real-Time");
 
   return (
-    <section className="glass-panel p-6 space-y-6 overflow-hidden relative">
+    <section className="glass-panel relative space-y-6 overflow-hidden p-4 sm:p-6">
       <div className="flex justify-between items-center flex-wrap gap-4">
-        <h3 className="text-2xl font-bold text-white">
+        <h3 className="text-xl font-bold text-white sm:text-2xl">
           Portfolio Allocation by Sector
         </h3>
         <div className="flex bg-surface-container-low p-1 rounded-lg gap-1 border border-outline-variant">

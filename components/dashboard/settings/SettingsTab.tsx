@@ -49,14 +49,14 @@ export function SettingsTab() {
   }, []);
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] overflow-hidden">
+    <div className="flex min-h-[calc(100dvh-4rem)] flex-col lg:h-[calc(100dvh-4rem)] lg:flex-row lg:overflow-hidden">
       {/* Nested Sidebar */}
       <SettingsSidebar activeSection={activeSection} onSectionChange={setActiveSection} />
       
       {/* Content Panel */}
       <div 
         ref={contentRef}
-        className="flex-1 overflow-y-auto px-6 py-4 pb-40 custom-scrollbar"
+        className="custom-scrollbar min-w-0 flex-1 px-3 py-4 pb-20 sm:px-6 lg:overflow-y-auto lg:pb-40"
       >
         <div className="max-w-4xl mx-auto space-y-6">
           <UserPreferences />

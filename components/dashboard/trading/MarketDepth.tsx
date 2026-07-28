@@ -38,9 +38,9 @@ export function MarketDepth() {
         </div>
       </div>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden sm:flex-row">
         {/* Bids */}
-        <div className="flex-1 border-r border-outline-variant/30 flex flex-col">
+        <div className="flex flex-1 flex-col border-b border-outline-variant/30 sm:border-b-0 sm:border-r">
           <div className="grid grid-cols-3 px-4 py-2 bg-surface-container-lowest text-[10px] text-on-surface-variant font-bold uppercase">
             <span>Size</span>
             <span>Price</span>
@@ -95,7 +95,7 @@ export function MarketDepth() {
       </div>
 
       {/* Mid-Market Spread */}
-      <div className="px-6 py-2 bg-primary-container border-y border-outline-variant/40 flex justify-between items-center text-[11px]">
+      <div className="flex flex-col justify-between gap-1 border-y border-outline-variant/40 bg-primary-container px-4 py-2 text-[11px] sm:flex-row sm:items-center sm:px-6">
         <span className="text-on-surface-variant font-medium">SPREAD: $0.04 (0.02%)</span>
         <span className="text-primary font-bold">STABLE CONNECTION</span>
       </div>

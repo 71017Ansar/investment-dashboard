@@ -44,14 +44,14 @@ const summaryData: SummaryCard[] = [
 
 export function PortfolioSummaryCards() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <section className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
       {summaryData.map((card, index) => {
         const Icon = card.icon;
         
         return (
           <div
             key={index}
-            className="glass-panel p-6 flex flex-col justify-between"
+            className="glass-panel flex flex-col justify-between p-4 sm:p-6"
           >
             <div>
               <div className="flex justify-between items-start">

@@ -1,7 +1,3 @@
-"use client";
-
-import { Sidebar } from "@/components/dashboard/Sidebar";
-import { Header } from "@/components/dashboard/Header";
 import { QuickActions } from "@/components/dashboard/QuickActions";
 import { PerformanceChart } from "@/components/dashboard/PerformanceChart";
 import { KPIStats } from "@/components/dashboard/KPIStats";
@@ -18,26 +14,23 @@ import {
 
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Sidebar />
-      <Header />
+    <>
       <QuickActions />
-      
-      <main className="ml-64 pt-32 px-6 pb-6 space-y-6 max-w-[1440px] mx-auto">
+      <div className="mx-auto max-w-[1440px] space-y-4 px-3 pb-8 pt-24 sm:space-y-6 sm:px-6 sm:pt-28 lg:px-8">
         <PerformanceChart data={chartData} />
         <KPIStats stats={kpiData} />
         
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-1">
+        <section className="grid grid-cols-1 gap-4 sm:gap-6 xl:grid-cols-3">
+          <div className="xl:col-span-1">
             <AssetAllocation data={assetAllocation} />
           </div>
-          <div className="lg:col-span-2">
+          <div className="xl:col-span-2">
             <HoldingsTable data={holdings} />
           </div>
         </section>
         
         <TransactionsTable data={transactions} />
-      </main>
-    </div>
+      </div>
+    </>
   );
 }

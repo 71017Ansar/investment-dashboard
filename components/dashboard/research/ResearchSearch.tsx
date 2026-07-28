@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, Filter } from "lucide-react";
+import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface FilterButton {
@@ -26,7 +26,7 @@ export function ResearchSearch() {
 
   return (
     <section>
-      <div className="glass-panel rounded-xl p-6 space-y-4">
+      <div className="glass-panel space-y-4 rounded-xl p-4 sm:p-6">
         {/* Search Bar */}
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="flex-1 w-full relative">
@@ -60,13 +60,13 @@ export function ResearchSearch() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2 p-1 bg-surface-container-lowest rounded-lg">
+          <div className="flex max-w-full items-center gap-2 overflow-x-auto rounded-lg bg-surface-container-lowest p-1">
             {timeRanges.map((range) => (
               <button
                 key={range}
                 onClick={() => setActiveTimeRange(range)}
                 className={cn(
-                  "px-3 py-1 rounded text-xs font-medium transition-all",
+                  "shrink-0 px-3 py-1 rounded text-xs font-medium transition-all",
                   activeTimeRange === range
                     ? "bg-surface-container-high text-on-surface"
                     : "text-on-surface-variant hover:text-on-surface"

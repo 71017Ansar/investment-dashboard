@@ -50,20 +50,20 @@ export function TransactionsTable({ data }: TransactionsTableProps) {
   };
 
   return (
-    <div className="glass-panel p-6 rounded-xl space-y-4">
+    <div className="glass-panel space-y-4 rounded-xl p-4 sm:p-6">
       <div className="flex justify-between items-center flex-wrap gap-4">
-        <h3 className="text-2xl font-bold text-white">Recent Transactions</h3>
+        <h3 className="text-xl font-bold text-white sm:text-2xl">Recent Transactions</h3>
         
-        <div className="flex items-center gap-3">
+        <div className="flex w-full items-center gap-2 overflow-x-auto sm:w-auto sm:gap-3">
           {/* Filter Dropdown */}
-          <div className="flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded-lg border border-outline-variant/30 cursor-pointer hover:border-primary transition-all">
+          <div className="flex shrink-0 items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded-lg border border-outline-variant/30 cursor-pointer hover:border-primary transition-all">
             <Filter className="h-4 w-4 text-on-surface-variant" />
             <span className="text-sm text-on-surface-variant">Asset Class</span>
             <ChevronDown className="h-4 w-4 text-on-surface-variant" />
           </div>
           
           {/* Filter Button */}
-          <div className="flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded-lg border border-outline-variant/30 cursor-pointer hover:border-primary transition-all">
+          <div className="flex shrink-0 items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded-lg border border-outline-variant/30 cursor-pointer hover:border-primary transition-all">
             <Filter className="h-4 w-4 text-on-surface-variant" />
             <span className="text-sm text-on-surface-variant">Filter</span>
           </div>
@@ -76,7 +76,7 @@ export function TransactionsTable({ data }: TransactionsTableProps) {
       </div>
 
       <div className="overflow-x-auto">
-        <table className="w-full text-left">
+        <table className="min-w-[760px] w-full text-left">
           <thead>
             <tr className="bg-surface-container-highest/20 rounded-xl">
               <th className="p-3 text-xs font-medium text-on-surface-variant uppercase tracking-wider rounded-l-xl">

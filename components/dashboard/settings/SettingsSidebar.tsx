@@ -34,8 +34,8 @@ const navItems: NavItem[] = [
 
 export function SettingsSidebar({ activeSection, onSectionChange }: SettingsSidebarProps) {
   return (
-    <nav className="w-64 border-r border-white/5 py-4 px-4 space-y-1 overflow-y-auto">
-      <p className="text-xs font-medium text-on-surface-variant/40 px-3 pb-2 uppercase tracking-widest">
+    <nav className="custom-scrollbar sticky top-16 z-30 flex w-full gap-2 overflow-x-auto border-b border-white/5 bg-background/95 px-3 py-3 backdrop-blur-xl lg:static lg:block lg:w-64 lg:shrink-0 lg:space-y-1 lg:overflow-y-auto lg:border-b-0 lg:border-r lg:bg-transparent lg:px-4 lg:py-4">
+      <p className="hidden text-xs font-medium text-on-surface-variant/40 px-3 pb-2 uppercase tracking-widest lg:block">
         General
       </p>
       {navItems
@@ -45,7 +45,7 @@ export function SettingsSidebar({ activeSection, onSectionChange }: SettingsSide
             key={item.id}
             onClick={() => onSectionChange(item.id)}
             className={cn(
-              "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-sm font-medium",
+              "flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2.5 text-sm font-medium transition-all lg:w-full lg:gap-3",
               activeSection === item.id
                 ? "text-primary bg-primary/10 border-l-2 border-primary"
                 : "text-on-surface-variant hover:bg-white/5 hover:text-white"
@@ -56,7 +56,7 @@ export function SettingsSidebar({ activeSection, onSectionChange }: SettingsSide
           </button>
         ))}
       
-      <p className="text-xs font-medium text-on-surface-variant/40 px-3 pt-6 pb-2 uppercase tracking-widest">
+      <p className="hidden text-xs font-medium text-on-surface-variant/40 px-3 pt-6 pb-2 uppercase tracking-widest lg:block">
         Security & Ops
       </p>
       {navItems
@@ -66,7 +66,7 @@ export function SettingsSidebar({ activeSection, onSectionChange }: SettingsSide
             key={item.id}
             onClick={() => onSectionChange(item.id)}
             className={cn(
-              "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-sm font-medium",
+              "flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2.5 text-sm font-medium transition-all lg:w-full lg:gap-3",
               activeSection === item.id
                 ? "text-primary bg-primary/10 border-l-2 border-primary"
                 : "text-on-surface-variant hover:bg-white/5 hover:text-white"

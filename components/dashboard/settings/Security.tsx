@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Shield, Monitor, Smartphone, Download, Key } from "lucide-react";
+import { Shield, Monitor, Smartphone, Download } from "lucide-react";
 
 export function Security() {
   const [twoFactor, setTwoFactor] = useState(true);
@@ -14,9 +14,9 @@ export function Security() {
     <section 
       id="security" 
       data-section="security"
-      className="glass-panel p-6 rounded-xl space-y-6"
+      className="glass-panel space-y-6 rounded-xl p-4 sm:p-6"
     >
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <h2 className="text-2xl font-bold text-white mb-1">Security</h2>
           <p className="text-sm text-on-surface-variant">Protect your institutional assets and API access.</p>
@@ -27,8 +27,8 @@ export function Security() {
       </div>
 
       {/* 2FA */}
-      <div className="flex items-center justify-between p-6 bg-primary/5 border border-primary/10 rounded-xl">
-        <div className="flex items-center gap-6">
+      <div className="flex items-center justify-between gap-4 rounded-xl border border-primary/10 bg-primary/5 p-4 sm:p-6">
+        <div className="flex min-w-0 items-center gap-3 sm:gap-6">
           <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
             <Shield className="h-6 w-6 text-primary" />
           </div>
@@ -46,7 +46,7 @@ export function Security() {
       </div>
 
       {/* Password & API */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="p-6 bg-white/5 rounded-xl border border-white/5">
           <h4 className="text-sm font-medium text-white mb-4">Password Management</h4>
           <button className="w-full py-2.5 bg-surface-container-high border border-white/10 rounded-lg text-white hover:bg-white/10 transition-colors">
@@ -76,8 +76,8 @@ export function Security() {
         </h4>
         <div className="space-y-2">
           {sessions.map((session) => (
-            <div key={session.id} className="flex items-center justify-between p-4 bg-background rounded-lg border border-white/5">
-              <div className="flex items-center gap-4">
+            <div key={session.id} className="flex flex-col items-start justify-between gap-3 rounded-lg border border-white/5 bg-background p-4 sm:flex-row sm:items-center">
+              <div className="flex min-w-0 items-center gap-4">
                 {session.current ? (
                   <Monitor className="h-5 w-5 text-primary" />
                 ) : (
@@ -104,7 +104,7 @@ export function Security() {
       </div>
 
       {/* Actions */}
-      <div className="flex justify-between items-center pt-4 border-t border-white/10">
+      <div className="flex flex-col justify-between gap-3 border-t border-white/10 pt-4 sm:flex-row sm:items-center">
         <button className="px-6 py-2.5 flex items-center gap-2 text-white border border-white/10 rounded-lg hover:bg-white/5 transition-colors">
           <Download className="h-4 w-4" />
           Download Audit Log

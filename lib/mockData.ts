@@ -1,10 +1,8 @@
-import { Wallet, TrendingUp, BarChart, PieChart, LucideIcon } from "lucide-react";
-
 interface KPI {
   label: string;
   value: string;
   change: string;
-  icon: LucideIcon;
+  icon: "wallet" | "trending-up" | "bar-chart" | "pie-chart";
   trend: "up" | "down";
   isDominant?: boolean;
 }
@@ -14,7 +12,7 @@ export const kpiData: KPI[] = [
     label: "Total AUM",
     value: "$12.4B",
     change: "+2.3%",
-    icon: Wallet,  // ✅ Now using actual icon component
+    icon: "wallet",
     trend: "up",
     isDominant: true,
   },
@@ -22,21 +20,21 @@ export const kpiData: KPI[] = [
     label: "Daily P&L",
     value: "+$84.2M",
     change: "+0.8%",
-    icon: TrendingUp,  // ✅ Now using actual icon component
+    icon: "trending-up",
     trend: "up",
   },
   {
     label: "YoY Return",
     value: "+18.7%",
     change: "+3.1%",
-    icon: BarChart,  // ✅ Now using actual icon component
+    icon: "bar-chart",
     trend: "up",
   },
   {
     label: "Top Holding",
     value: "AAPL - 7.2%",
     change: "+1.4%",
-    icon: PieChart,  // ✅ Now using actual icon component
+    icon: "pie-chart",
     trend: "up",
   },
 ];

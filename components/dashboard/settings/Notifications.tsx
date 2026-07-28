@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Bell, Mail, MessageSquare, Monitor } from "lucide-react";
+import { Mail, MessageSquare, Monitor } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface AlertType {
@@ -50,7 +50,7 @@ export function Notifications() {
     <section 
       id="notifications" 
       data-section="notifications"
-      className="glass-panel p-6 rounded-xl space-y-6"
+      className="glass-panel space-y-6 rounded-xl p-4 sm:p-6"
     >
       <div>
         <h2 className="text-2xl font-bold text-white mb-1">Notifications</h2>
@@ -58,11 +58,11 @@ export function Notifications() {
       </div>
 
       {/* Alert Channels */}
-      <div className="grid grid-cols-12 gap-4 border-t border-white/10 pt-6">
-        <div className="col-span-4">
+      <div className="grid grid-cols-1 gap-4 border-t border-white/10 pt-6 md:grid-cols-12">
+        <div className="md:col-span-4">
           <h3 className="text-sm font-medium text-white">Alert Channels</h3>
         </div>
-        <div className="col-span-8 space-y-4">
+        <div className="space-y-4 md:col-span-8">
           {[
             { id: "inApp", icon: Monitor, label: "In-App Notifications", desc: "Real-time alerts within the terminal." },
             { id: "email", icon: Mail, label: "Email Alerts", desc: "admin@vanguard.com" },
@@ -99,13 +99,13 @@ export function Notifications() {
       </div>
 
       {/* Alert Types */}
-      <div className="grid grid-cols-12 gap-4 border-t border-white/10 pt-6">
-        <div className="col-span-4">
+      <div className="grid grid-cols-1 gap-4 border-t border-white/10 pt-6 md:grid-cols-12">
+        <div className="md:col-span-4">
           <h3 className="text-sm font-medium text-white">Alert Types</h3>
         </div>
-        <div className="col-span-8 space-y-4">
+        <div className="space-y-4 md:col-span-8">
           {alertTypeOptions.map((alert) => (
-            <div key={alert.id} className="flex items-center justify-between">
+            <div key={alert.id} className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
               <p className="text-sm text-white">{alert.label}</p>
               <div className="flex bg-surface-container rounded-lg p-1">
                 {alert.options.map((option) => (
@@ -129,11 +129,11 @@ export function Notifications() {
       </div>
 
       {/* Quiet Hours */}
-      <div className="grid grid-cols-12 gap-4 border-t border-white/10 pt-6">
-        <div className="col-span-4">
+      <div className="grid grid-cols-1 gap-4 border-t border-white/10 pt-6 md:grid-cols-12">
+        <div className="md:col-span-4">
           <h3 className="text-sm font-medium text-white">Quiet Hours</h3>
         </div>
-        <div className="col-span-8 space-y-4">
+        <div className="space-y-4 md:col-span-8">
           <div className="flex items-center justify-between">
             <p className="text-sm text-white">Enable Quiet Hours</p>
             <input
@@ -144,7 +144,7 @@ export function Notifications() {
             />
           </div>
           {quietHours.enabled && (
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <div className="flex-1 space-y-1.5">
                 <label className="text-xs text-on-surface-variant">Starts At</label>
                 <input

@@ -28,7 +28,7 @@ export function UserPreferences() {
     <section 
       id="user-preferences" 
       data-section="user-preferences"
-      className="glass-panel p-6 rounded-xl space-y-6"
+      className="glass-panel space-y-6 rounded-xl p-4 sm:p-6"
     >
       <div className="flex justify-between items-start">
         <div>
@@ -38,12 +38,12 @@ export function UserPreferences() {
       </div>
 
       {/* Personal Information */}
-      <div className="grid grid-cols-12 gap-4 border-t border-white/10 pt-6">
-        <div className="col-span-4">
+      <div className="grid grid-cols-1 gap-4 border-t border-white/10 pt-6 md:grid-cols-12">
+        <div className="md:col-span-4">
           <h3 className="text-sm font-medium text-white">Personal Information</h3>
           <p className="text-sm text-on-surface-variant opacity-60">Update your primary identity data.</p>
         </div>
-        <div className="col-span-8 space-y-4">
+        <div className="space-y-4 md:col-span-8">
           <div className="flex items-center gap-4">
             <div className="relative group cursor-pointer">
               <div className="w-20 h-20 rounded-xl overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors bg-surface-container">
@@ -65,7 +65,7 @@ export function UserPreferences() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <label className="text-xs font-medium text-on-surface-variant">Full Name</label>
               <input
@@ -91,12 +91,12 @@ export function UserPreferences() {
       </div>
 
       {/* Display Settings */}
-      <div className="grid grid-cols-12 gap-4 border-t border-white/10 pt-6">
-        <div className="col-span-4">
+      <div className="grid grid-cols-1 gap-4 border-t border-white/10 pt-6 md:grid-cols-12">
+        <div className="md:col-span-4">
           <h3 className="text-sm font-medium text-white">Display Settings</h3>
           <p className="text-sm text-on-surface-variant opacity-60">Interface aesthetics and localization.</p>
         </div>
-        <div className="col-span-8 grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:col-span-8">
           <div className="space-y-1.5">
             <label className="text-xs font-medium text-on-surface-variant">Theme</label>
             <select
@@ -153,12 +153,12 @@ export function UserPreferences() {
       </div>
 
       {/* Dashboard Preferences */}
-      <div className="grid grid-cols-12 gap-4 border-t border-white/10 pt-6">
-        <div className="col-span-4">
+      <div className="grid grid-cols-1 gap-4 border-t border-white/10 pt-6 md:grid-cols-12">
+        <div className="md:col-span-4">
           <h3 className="text-sm font-medium text-white">Dashboard Preferences</h3>
           <p className="text-sm text-on-surface-variant opacity-60">Personalize your landing experience.</p>
         </div>
-        <div className="col-span-8 space-y-4">
+        <div className="space-y-4 md:col-span-8">
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
               <p className="text-sm text-white">Quick Actions Toggle</p>
@@ -172,7 +172,7 @@ export function UserPreferences() {
               type="checkbox"
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <label className="text-xs font-medium text-on-surface-variant">Default Tab</label>
               <select
@@ -209,7 +209,7 @@ export function UserPreferences() {
       </div>
 
       {/* Actions */}
-      <div className="flex justify-end gap-3 pt-4 border-t border-white/10">
+      <div className="flex flex-col-reverse justify-end gap-3 border-t border-white/10 pt-4 sm:flex-row">
         <button className="px-6 py-2.5 text-sm font-medium text-on-surface-variant hover:text-white transition-colors">
           Discard
         </button>

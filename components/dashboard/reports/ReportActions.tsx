@@ -16,10 +16,10 @@ const templates: TemplateButton[] = [
 
 export function ReportActions() {
   return (
-    <section className="glass-panel p-6 rounded-xl space-y-4">
+    <section className="glass-panel space-y-4 rounded-xl p-4 sm:p-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-4 flex-wrap">
-          <button className="flex items-center gap-2 bg-primary text-on-primary-container px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all active:scale-95">
+          <button className="flex w-full items-center justify-center gap-2 bg-primary text-on-primary-container px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all active:scale-95 sm:w-auto">
             <FilePlus className="h-5 w-5" />
             Generate New Report
           </button>
@@ -37,11 +37,11 @@ export function ReportActions() {
           </div>
         </div>
         
-        <div className="flex items-center gap-3">
-          <span className="text-sm text-on-surface-variant">Date Range:</span>
+        <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-2 xl:w-auto">
+          <span className="col-span-3 text-sm text-on-surface-variant xl:col-span-1">Date Range:</span>
           <input
             type="date"
-            className="bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all"
+            className="min-w-0 bg-surface-container-lowest border border-outline-variant rounded-lg px-2 py-2 text-sm text-white focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all sm:px-3"
             defaultValue="2024-01-01"
           />
           <span className="text-on-surface-variant">to</span>

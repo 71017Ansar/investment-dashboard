@@ -27,20 +27,20 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
   const [activeFilter, setActiveFilter] = useState("1M");
 
   return (
-    <section className="glass-panel p-6 rounded-xl space-y-4">
+    <section className="glass-panel space-y-4 rounded-xl p-4 sm:p-6">
       <div className="flex justify-between items-center flex-wrap gap-2">
         <div>
-          <h3 className="text-2xl font-bold text-white">Portfolio Performance</h3>
+          <h3 className="text-xl font-bold text-white sm:text-2xl">Portfolio Performance</h3>
           <p className="text-xs font-medium uppercase tracking-wider text-on-surface-variant">
             Comparison vs S&P 500 Index
           </p>
         </div>
-        <div className="flex items-center gap-1 p-1 bg-surface-container-highest/50 rounded-xl border border-outline-variant/30">
+        <div className="flex max-w-full items-center gap-1 overflow-x-auto rounded-xl border border-outline-variant/30 bg-surface-container-highest/50 p-1">
           {timeFilters.map((filter) => (
             <button
               key={filter}
               className={cn(
-                "px-3 py-1 text-xs font-medium uppercase rounded-lg transition-all",
+                "shrink-0 px-3 py-1 text-xs font-medium uppercase rounded-lg transition-all",
                 activeFilter === filter
                   ? "bg-primary text-on-primary-container shadow-sm"
                   : "hover:text-white text-on-surface-variant"
@@ -53,7 +53,7 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
         </div>
       </div>
 
-      <div className="h-[400px] w-full">
+      <div className="h-64 w-full sm:h-80 lg:h-[400px]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
             <defs>
@@ -109,7 +109,7 @@ export function PerformanceChart({ data }: PerformanceChartProps) {
         </ResponsiveContainer>
       </div>
 
-      <div className="flex items-center gap-4 pt-3 border-t border-outline-variant/20">
+      <div className="flex flex-col items-start gap-2 border-t border-outline-variant/20 pt-3 sm:flex-row sm:items-center sm:gap-4">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-primary" />
           <span className="text-sm text-white">Vanguard Global Multi-Asset</span>

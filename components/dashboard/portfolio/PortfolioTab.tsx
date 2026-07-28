@@ -8,7 +8,7 @@ import { RecentActivity } from "./RecentActivity";
 
 export function PortfolioTab() {
   return (
-    <div className="p-6 space-y-6 max-w-[1440px] mx-auto">
+    <div className="mx-auto max-w-[1440px] space-y-4 px-3 pb-8 sm:space-y-6 sm:px-6 lg:px-8">
       {/* Row 1: Summary Cards */}
       <PortfolioSummaryCards />
       
@@ -16,11 +16,11 @@ export function PortfolioTab() {
       <SectorAllocation />
       
       {/* Row 3: Split Layout */}
-      <section className="grid grid-cols-1 lg:grid-cols-10 gap-4">
-        <div className="lg:col-span-7">
+      <section className="grid grid-cols-1 xl:grid-cols-10 gap-4">
+        <div className="xl:col-span-7">
           <HoldingsBreakdown />
         </div>
-        <div className="lg:col-span-3 space-y-4">
+        <div className="xl:col-span-3 space-y-4">
           <PortfolioAnalytics />
         </div>
       </section>

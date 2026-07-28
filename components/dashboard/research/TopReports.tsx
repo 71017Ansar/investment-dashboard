@@ -1,6 +1,6 @@
 "use client";
 
-import { User, Tag } from "lucide-react";
+import { User } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Report {
@@ -84,13 +84,13 @@ const renderStars = (count: number) => {
 export function TopReports() {
   return (
     <section>
-      <h2 className="text-2xl font-bold text-white mb-6">Top Research Reports</h2>
+      <h2 className="mb-6 text-xl font-bold text-white sm:text-2xl">Top Research Reports</h2>
       
       <div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
         {reports.map((report) => (
           <div
             key={report.id}
-            className="min-w-[320px] glass-panel rounded-xl p-5 hover:bg-white/[0.03] transition-all group cursor-pointer"
+            className="glass-panel group w-[85vw] max-w-[320px] shrink-0 cursor-pointer rounded-xl p-5 transition-all hover:bg-white/[0.03] sm:w-80"
           >
             {/* Image */}
             <div className="relative h-40 w-full mb-4 rounded-lg overflow-hidden">
